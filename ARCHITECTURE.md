@@ -4,15 +4,26 @@
 
 ## **🏗 High-Level Overview**
 
-graph TD  
-    User\[User / Browser\] \--\>|Uploads PDF| Mem\[Browser Memory (ArrayBuffer)\]  
-    Mem \--\>|Read Text| PDFJS\[PDF.js\]  
-    PDFJS \--\>|Extract First 300 chars| Snippets\[Page Metadata\]  
-    Snippets \--\>|Send Metadata| Gemini\[Google Gemini API\]  
-    Gemini \--\>|Return JSON Structure| Logic\[React App Logic\]  
-    Logic \--\>|Read Original Buffer| PDFLib\[pdf-lib\]  
-    PDFLib \--\>|Slice & Package| Zip\[JSZip\]  
-    Zip \--\>|Download| User
+```mermaid
+graph LR
+    User[User / Browser]
+    Mem["Browser Memory\n(ArrayBuffer)"]
+    PDFJS[PDF.js]
+    Snippets[Page Metadata]
+    Gemini[Google Gemini API]
+    Logic[React App Logic]
+    PDFLib[pdf-lib]
+    Zip[JSZip]
+
+    User -->|Uploads PDF| Mem
+    Mem -->|Read Text| PDFJS
+    PDFJS -->|Extract First 300 chars| Snippets
+    Snippets -->|Send Metadata| Gemini
+    Gemini -->|Return JSON Structure| Logic
+    Logic -->|Read Original Buffer| PDFLib
+    PDFLib -->|Slice & Package| Zip
+    Zip -->|Download ZIP| User
+```
 
 ## **🔒 The Privacy-First Hybrid Model**
 
