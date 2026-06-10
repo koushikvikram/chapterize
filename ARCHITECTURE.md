@@ -6,13 +6,13 @@
 
 ```mermaid
 graph TD
-    User[User / Browser] -->|Uploads PDF| Mem[Browser Memory (ArrayBuffer)]
-    Mem -->|Read Text| PDFJS[PDF.js]
-    PDFJS -->|Extract First 300 chars| Snippets[Page Metadata]
-    Snippets -->|Send Metadata| Gemini[Google Gemini API]
-    Gemini -->|Return JSON Structure| Logic[React App Logic]
-    Logic -->|Read Original Buffer| PDFLib[pdf-lib]
-    PDFLib -->|Slice & Package| Zip[JSZip]
+    User["User / Browser"] -->|Uploads PDF| Mem["Browser Memory (ArrayBuffer)"]
+    Mem -->|Read Text| PDFJS["PDF.js"]
+    PDFJS -->|Extract First 300 chars| Snippets["Page Metadata"]
+    Snippets -->|Send Metadata| Gemini["Google Gemini API"]
+    Gemini -->|Return JSON Structure| Logic["React App Logic"]
+    Logic -->|Read Original Buffer| PDFLib["pdf-lib"]
+    PDFLib -->|Slice & Package| Zip["JSZip"]
     Zip -->|Download| User
 ```
 
