@@ -1,6 +1,6 @@
 # ✂️ Chapterize
 
-Chapterize is a client-side web app that detects chapter boundaries in PDF books with Google Gemini and exports each chapter as a separate PDF.
+Chapterize is a client-side web app that detects chapter boundaries in PDF books with Google Gemini and exports each chapter as a separate PDF. View and/or download each chapter separately or download all of them bundled as a ZIP file.
 
 ![Chapterize screenshot](./docs/assets/screenshot.png)
 
